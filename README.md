@@ -3,7 +3,7 @@
 <br>
 
 1. variable  
-    -consr : 상수, 변하지 않는 값 / 업데이트 불가능  
+    -const : 상수, 변하지 않는 값 / 업데이트 불가능  
     -let : 새로운걸 생성할때 사용하는 변수 / 업데이트 가능  
     -var : 이전에 사용하던 방식, 어떠한 규칙도 없음.  
     -결론적으로 const가 기본이며 let은 종종 사용 var 사용은 지양한다.  
@@ -23,8 +23,8 @@
     -const player = {  
         name: "son", age: 34, fat: false  
     }  
-    이렇게 진행하게 되면 console.log(player.name)으로 찾아서 son 이라는 값이 출력됨.
-    console.log(play["name"])으로 하였을때도 같은 값이 출력된다.
+    이렇게 진행하게 되면 console.log(player.name)으로 찾아서 son 이라는 값이 출력됨.  
+    console.log(play["name"])으로 하였을때도 같은 값이 출력된다.  
     -player.fat = false 처럼 업데이트도 가능하다.  
     *const는 변하지 않는 값이지만 const 안에 무언가를 업데이트 하는것은 가능하다.  
 
@@ -41,7 +41,7 @@
     sayHello('A')  
     sayHello('B') : 각각의 결과값은 hi I'm A/B  
 
-    function play(a,b){  
+    function play(a,b){    
         console.log(a+b)  
     }  
     play(5,10)  
@@ -50,7 +50,7 @@
     -function이 어떤값을 return 하기 때문에 function을 호출하는 코드가 function의 반환값이 됨  
     const calculator = {  
         plus : function(a,b){  
-            retutn a + b;  
+            return a + b;  
         },  
         minus : function(a,b){  
             return a - b;  
@@ -58,4 +58,29 @@
     }  
     const resultCalc = calculator.plus(5,10);  
     -return을 하면 function은 작동을 멈추고 결과값을 return하고 끝나버린다.  
-    
+
+7. conditionals  
+    -const age = parseInt(prompt("please write your age"))  
+    -parseInt() : string을 number로 변환시켜준다  
+    -isNaN() : boolean값으로 알려준다.  
+    -const age = parseInt(prompt("please write your age"))  
+     if(isNaN(age)){  
+       alert('tru again')  
+     }  //isNaN값이 true인것은 숫자가 아니인 것을 의미하기 때문에  
+
+8. The Document object  
+    -document.title/document.body 처럼 javascript에서 html로 불러오기 가능  
+
+9. searching for Elements  
+    -document.querySelector("") : css selector를 이용하며 첫번째 element만 가져온다  
+    -document.querySelectorAll("") : 모든 element를 다 가져옴  
+
+10. Events  
+    -element의 내부를 보고싶다면 console.log 대신에 console.dir 사용  
+    -title.addEventLister("click",handleTitle) //이렇게 이벤트 실헹  
+    -function handleTitle(){  
+        title.style.color = "blue"  
+    } //이벤트 정의  
+    -title.addEventlister("click",handleTitle) 대신에 title.onclick = handleTitle 이렇게 사용 가능  
+    -addEventlister을 사용하는 경우는 removeEventClick의 기능 때문  
+    -window.addEventlister('resize',handleSize) 는 document.body에서 가져와서 기능 사용 가능  

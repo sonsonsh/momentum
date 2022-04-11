@@ -1,39 +1,22 @@
-const calculator = {
-    add : function(a,b){
-        return a+b;
-    },
-    minus : function(a,b){
-        return a-b;
-    },
-    divide : function(a,b){
-        return a/b;
-    },
-    power : function(a,b){
-        return a**b;
-    },
-    multi : function(a,b){
-        return a*b;
-    }
+
+const title = document.querySelector('.hello:first-child h1')
+
+function handleTitleclick(){
+    console.log("that was clicked")
+    title.style.color = "blue"
+}
+function handeTitlemouseenter(){
+    title.innerText = "마우스 엔터"
+}
+function handeTitlemouseleave(){
+    title.innerText = "마우스 리브"
 }
 
-const plusResult = calculator.add(5,10);
-const minusResult = calculator.minus(plusResult,1);
-console.log(minusResult)
-
-
-function calc2 (a, b) {
-    return calc3(a, b)
-    return a * b
-}
-  
-function calc3 (a, b) {
-    return a - b	
+function handleTitlesize(){
+    document.body.style.background = "tomato"
 }
 
-const result = calc2(8,5)
-console.log(result)
-
-
-
-
-
+title.onclick = handleTitleclick
+title.onmouseenter = handeTitlemouseenter
+title.onmouseleave = handeTitlemouseleave
+window.addEventListener('resize',handleTitlesize)
